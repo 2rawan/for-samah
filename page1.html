@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday 🥳</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* تنسيقات خاصة للصفحة الأولى */
+        .gift-box {
+            width: 250px;
+            height: 250px;
+            background-color: #f77894; /* لون الهدية */
+            position: relative;
+            margin: 50px auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gift-box:hover {
+            transform: scale(1.05);
+        }
+
+        /* شريطة الهدية */
+        .ribbon-v, .ribbon-h {
+            position: absolute;
+            background-color: #ffc0cb; /* لون الشريطة */
+        }
+  .ribbon-v {
+            width: 40px;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .ribbon-h {
+            width: 100%;
+            height: 40px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .click-text {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #ff69b4;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="page1-body">
+  <div class="container">
+        <h1>Hello Samah👋</h1>
+        <p>Happy birthday, my dear. This is just a small greeting... Click on the gift below to unlock the real celebration.!</p>
+
+        <div class="gift-box" id="giftBox">
+            <div class="ribbon-v"></div>
+            <div class="ribbon-h"></div>
+        </div>
+
+        <p class="click-text">Click to open the gift❤</p>
+    </div>
+
+    <script>
+        document.getElementById('giftBox').addEventListener('click', () => {
+            // إضافة تأثير اختفاء أو انتظار قبل الانتقال
+            document.querySelector('.container').style.opacity = '0';
+            setTimeout(() => {
+                // الانتقال إلى الصفحة الثانية
+                window.location.href = 'page2.html';
+            }, 500); // 500ms للاختفاء
+        });
+    </script>
+</body>
+</html>

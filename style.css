@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+
+:root {
+    --primary-color: #ff69b4; /* Pink */
+    --secondary-color: #ffe4e1; /* Misty Rose */
+    --text-color: #333;
+    --background-gradient: linear-gradient(135deg, #f0f8ff, #ffecf9);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--background-gradient);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: opacity 0.5s ease; /* للانتقال الناعم */
+}
+.container {
+    width: 90%;
+    max-width: 850px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+
+/* --- العناوين والنصوص --- */
+h1 {
+    color: var(--primary-color);
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+p {
+    font-size: 1.1em;
+    color: #555f;
+    margin-bottom: 25px;
+}
+
+/* --- تنسيقات خاصة للصفحة الثانية (الاحتفال) --- */
+.page2-body .header h1 {
+    opacity: 0; /* يبدأ مخفياً */
+    transform: translateY(-20px);
+    transition: all 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* تأثير ارتداد */
+}
+.image-gallery {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.gallery-img.active {
+    opacity: 1;
+}
+.music-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.music-btn:hover {
+    background-color: #ff479e;
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* --- كرت الرسالة --- */
+.message-card {
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 40px;
+    border: 3px dashed var(--primary-color);
+}
+
+.message-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+.message-card p {
+    font-size: 1.15em;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.signature {
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: left;
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 1.2em;
+}
